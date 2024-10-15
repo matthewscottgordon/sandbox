@@ -15,4 +15,4 @@ jobs:
         run: |
           echo "NOT_SO_SECRET_KEY=${{ secrets.NOT_SO_SECRET_KEY }}" > .env
       - name: Build docker images
-      - run: docker compose build
+        run: docker compose build

@@ -5,15 +5,13 @@ jobs:
   Build-Docker-Images:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 猫🐈
-      - run: echo Host OS: ${{ runner.os }}
-      - run: echo Git repo: ${{ github.repository }}
-      - run: echo Git branch: ${{ github.ref }}
+      - run: echo "猫🐈"
+      - run: echo "Git repo: ${{ github.repository }}"
+      - run: echo "Git branch: ${{ github.ref }}"
       - name: Check out repository
         uses actions/checkout@v4
-      - run: echo Git checkout complete
       - name: Create env file
         run: |
           echo "NOT_SO_SECRET_KEY=${{ secrets.NOT_SO_SECRET_KEY }}" > .env
-      - run: echo Build docker images
+      - name: Build docker images
       - run: docker compose build

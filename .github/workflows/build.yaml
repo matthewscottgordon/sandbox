@@ -5,8 +5,12 @@ jobs:
   Build-Docker-Images:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "猫🐈"
+      - run: echo "Host OS is ${{ runner.os }}"
+      - run: echo "Git repo is ${{ github.repository }}"
+      - run: echo "Git branch is ${{ github.ref }}"
       - name: Check out repository
-        uses actions/checkout@v4
+        uses: actions/checkout@v4
       - name: Create env file
         run: |
           echo "NOT_SO_SECRET_KEY=${{ secrets.NOT_SO_SECRET_KEY }}" > .env

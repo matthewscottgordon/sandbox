@@ -1,0 +1,6 @@
+services:
+  sandbox:
+    build:
+      context: .
+      args:
+        NOT_SO_SECRET_KEY: "${NOT_SO_SECRET_KEY:?NOT_SO_SECRET_KEY missing}"

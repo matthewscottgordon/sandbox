@@ -6,8 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "猫🐈"
-      - run: echo "Git repo: ${{ github.repository }}"
-      - run: echo "Git branch: ${{ github.ref }}"
       - name: Check out repository
         uses actions/checkout@v4
       - name: Create env file
